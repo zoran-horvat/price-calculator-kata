@@ -32,7 +32,7 @@ Write code which displays base price and price with tax for a product.
 
 **Definition of done:**
 
-Sample product: Book with title = “The Little Prince”, UPC=12345, price=$20.25.
+Sample product: Book with name = “The Little Prince”, UPC=12345, price=$20.25.
 
 Product price reported as $20.25 before tax and $24.30 after 20% tax.
 
@@ -50,7 +50,7 @@ Enhance code so that it can apply discount and tax to the product’s price.
 
 **Definition of done:**
 
-Sample product: Book with title = “The Little Prince”, UPC=12345, price=$20.25.
+Sample product: Book with name = “The Little Prince”, UPC=12345, price=$20.25.
 
 Tax=20%, discount=15%
 
@@ -58,6 +58,17 @@ Tax amount = $4.05; Discount amount = $3.04
 
 Price before = $20.25, price after = $21.26
 
+**3. REPORT-DISCOUNT**
+
+When a discount is applied, print out (or display by any convenient means) a message which reports the discounted amount.
+
+**Definition of done:**
+
+Sample product: Title = “The Little Prince”, UPC=12345, price=$20.25.
+
+Tax = 20%, discount = 15% - Program displays $3.04 amount which was deduced
+
+Tax = 20%, no discount - Program doesn't display any deduced amount
 
 (more to come)
 
