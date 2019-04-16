@@ -25,7 +25,7 @@ There is a flat-rate tax (currently 20%) added to all products’ prices. Tax is
 Customer wants to be able to specify tax percentage.  
 Write code which displays base price and price with tax for a product.
 
-**Definition of done:**  
+*Definition of done:*  
 Sample product: Book with name = “The Little Prince”, UPC=12345, price=$20.25.
 
 Product price reported as $20.25 before tax and $24.30 after 20% tax.  
@@ -37,7 +37,7 @@ Discount is specified as a percentage relative to price. Tax is always applied t
 Customer requires discount percentage to be configurable.  
 Enhance code so that it can apply discount and tax to the product’s price.
 
-**Definition of done:**  
+*Definition of done:*  
 Sample product: Book with name = “The Little Prince”, UPC=12345, price=$20.25.
 
 Tax=20%, discount=15%  
@@ -47,7 +47,7 @@ Price before = $20.25, price after = $21.26
 **3. REPORT**  
 When a discount is applied, print out (or display by any convenient means) a message which reports the discounted amount.
 
-**Definition of done:**  
+*Definition of done:*  
 Sample product: Title = “The Little Prince”, UPC=12345, price=$20.25.
 
 Case #1:  
@@ -66,7 +66,7 @@ This discount only applies to a product with UPC value equal to the value define
 If both universal and UPC-based discounts are applicable, they both apply to original product price and then sum up.  
 When two discounts are applied, only the total discounted amount is printed (requirement REPORT-DISCOUNT).
 
-**Definition of done:**  
+*Definition of done:*  
 Sample product: Title = “The Little Prince”, UPC=12345, price=$20.25.
 
 Case #1:  
@@ -86,7 +86,7 @@ Customer wants to introduce packaging and transport costs, administrative costs,
 There can be more than one cost added, each defined by a description and an amount. Amount can either be a percentage of price or an absolute value.  
 Program should separately report product price, tax, discounts, each cost and total.
 
-Definition of done:  
+*Definition of done:*  
 Sample product: Title = “The Little Prince”, UPC=12345, price=$20.25.
 
 Case #1:  
@@ -118,7 +118,7 @@ Program reports no discounts
 Customer is not satisfied with the way in which discounts are combined (simple sum).  
 New request is to allow the customer to select between two methods of combining discounts: (1) additive - discounts are all calculated from the original price and summed up, or (2) multiplicative - each discount is calculated from the price after applying the previous one.
 
-Definition of done:  
+*Definition of done:*  
 Sample product: Title = “The Little Prince”, UPC=12345, price=$20.25.
 
 Case #1:  
@@ -157,7 +157,7 @@ Program separately reports $4.24 total discount
 Customer is not satisfied with total discounted amount and wants to put a cap on it.  
 Cap is either a percentage of original price or an absolute amount. Either way, the discounted amount must not be larger than indicated by the cap.
 
-Definition of done:  
+*Definition of done:*  
 Sample product: Title = “The Little Prince”, UPC=12345, price=$20.25.
 
 Case #1:  
@@ -192,6 +192,33 @@ Tax = $4.25
 Discounts = $4.46  
 TOTAL = $20.04  
 Program separately reports $4.46 total discount
+
+**8. CURRENCY**  
+Customer is happy to announce expansion to other markets.  
+New request is to support currencies other than US dollar.  
+Currencies should be indicated using ISO-3 codes (e.g. USD, GBP, JPY, etc.).
+
+*Definition of done:*
+
+Case #1:  
+Sample product: Title = “The Little Prince”, UPC=12345, price=20.25 USD.  
+Tax = 20%, no discounts
+
+Program prints:  
+Cost = 20.25 USD  
+Tax = 4.25 USD  
+TOTAL = 24.50 USD  
+Program reports no discount
+
+Case #2:  
+Sample product: Title = “The Little Prince”, UPC=12345, price=17.76 GBP.  
+Tax = 20%, no discounts
+
+Program prints:  
+Cost = 17.76 GBP  
+Tax = 3.55 GBP  
+TOTAL = 21.31 GBP  
+Program reports no discount
 
 (more to come)
 
