@@ -153,6 +153,45 @@ Transport = $2.2
 TOTAL = $22.65  
 Program separately reports $4.24 total discount
 
+**7.	CAP**
+Customer is not satisfied with total discounted amount and wants to put a cap on it.  
+Cap is either a percentage of original price or an absolute amount. Either way, the discounted amount must not be larger than indicated by the cap.
+
+Definition of done:  
+Sample product: Title = “The Little Prince”, UPC=12345, price=$20.25.
+
+Case #1:  
+Tax = 21%, discount = 15%, UPC discount = 7% for UPC=12345, additive discounts, cap = 20%  
+Tax amount = $20.25 * 21% = $4.25, discounts = $20.25 * 15% + $20.25 * 7% = $3.04 + $1.42 = $4.46, cap = $20.25 * 20% = $4.05
+
+Program prints:  
+Cost = $20.25  
+Tax = $4.25  
+Discounts = $4.05  
+TOTAL = $20.45  
+Program separately reports $4.05 total discount
+
+Case #2:  
+Tax = 21%, discount = 15%, UPC discount = 7% for UPC=12345, additive discounts, cap = $4  
+Tax amount = $20.25 * 21% = $4.25, discounts = $20.25 * 15% + $20.25 * 7% = $3.04 + $1.42 = $4.46, cap = $4
+
+Program prints:  
+Cost = $20.25  
+Tax = $4.25  
+Discounts = $4.00  
+TOTAL = $20.50  
+Program separately reports $4.00 total discount
+
+Case #3:  
+Tax = 21%, discount = 15%, UPC discount = 7% for UPC=12345, additive discounts, cap = 30%  
+Tax amount = $20.25 * 21% = $4.25, discounts = $20.25 * 15% + $20.25 * 7% = $3.04 + $1.42 = $4.46, cap = $20.25 * 30% = $6.08
+
+Program prints:  
+Cost = $20.25  
+Tax = $4.25  
+Discounts = $4.46  
+TOTAL = $20.04  
+Program separately reports $4.46 total discount
 
 (more to come)
 
