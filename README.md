@@ -220,5 +220,9 @@ Tax = 3.55 GBP
 TOTAL = 21.31 GBP  
 Program reports no discount
 
+9.	CONFIGURATOR (bonus level)  
+Customer wants to be able to configure all elements of the price calculator: tax, discounts, combination method, cap, expenses.  
+You are free to choose the configuration method – plain text file, XML file, JSON file, database, etc.
+
 (more to come)
 
