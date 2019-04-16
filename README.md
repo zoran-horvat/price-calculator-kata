@@ -107,6 +107,45 @@ Tax = $4.25
 TOTAL = $24.5  
 Program reports no discounts
 
+6.	COMBINED-DISCOUNTS  
+Customer is not satisfied with the way in which discounts are combined (simple sum).  
+New request is to allow the customer to select between two methods of combining discounts: (1) additive - discounts are all calculated from the original price and summed up, or (2) multiplicative - each discount is calculated from the price after applying the previous one.
+
+Definition of done:  
+Sample product: Title = “The Little Prince”, UPC=12345, price=$20.25.
+
+Case #1:  
+Tax = 21%, discount = 15%, UPC discount = 7% for UPC=12345, additive discounts  
+Packaging cost = 1% of price  
+Transport cost = $2.2  
+Tax amount = $20.25 * 21% = $4.25, discounts = $20.25 * 15% + $20.25 * 7% = $3.04 + $1.42 = $4.46  
+Packaging = $20.25 * 1% = $0.20, transport = $2.2
+
+Program prints:  
+Cost = $20.25  
+Tax = $4.25  
+Discounts = $4.46  
+Packaging = $0.20  
+Transport = $2.2  
+TOTAL = $22.44  
+Program separately reports $4.46 total discount
+
+Case #2:  
+Tax = 21%, discount = 15%, UPC discount = 7% for UPC=12345, multiplicative discounts  
+Packaging cost = 1% of price  
+Transport cost = $2.2  
+Tax amount = $20.25 * 21% = $4.25, discount #1 = $20.25 * 15% = $3.04; discount #2 = ($20.25 - $3.04) * 7% = $1.20  
+Packaging = $20.25 * 1% = $0.20, transport = $2.2
+
+Program prints:  
+Cost = $20.25  
+Tax = $4.25  
+Discounts = $4.24  
+Packaging = $0.20  
+Transport = $2.2  
+TOTAL = $22.65  
+Program separately reports $4.24 total discount
+
 
 (more to come)
 
