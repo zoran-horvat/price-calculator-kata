@@ -38,6 +38,7 @@ Product price reported as $20.25 before tax and $24.30 after 20% tax.
 
 Product price reported as $20.25 before tax and $24.50 after 21% tax.
 
+
 **2. DISCOUNT**
 
 Customer chooses to apply a relative discount to all products.
@@ -58,6 +59,7 @@ Tax amount = $4.05; Discount amount = $3.04
 
 Price before = $20.25, price after = $21.26
 
+
 **3. REPORT-DISCOUNT**
 
 When a discount is applied, print out (or display by any convenient means) a message which reports the discounted amount.
@@ -69,6 +71,39 @@ Sample product: Title = “The Little Prince”, UPC=12345, price=$20.25.
 Tax = 20%, discount = 15% - Program displays $3.04 amount which was deduced
 
 Tax = 20%, no discount - Program doesn't display any deduced amount
+
+
+**4. UPC-DISCOUNT**
+
+There is a special discount assigned to a product with specified (configurable) UPC.
+
+This discount only applies to a product with UPC value equal to the value defined by the discount.
+
+If both universal and UPC-based discounts are applicable, they both apply to original product price and then sum up.
+
+When two discounts are applied, only the total discounted amount is printed (requirement REPORT-DISCOUNT).
+
+**Definition of done:**
+
+Sample product: Title = “The Little Prince”, UPC=12345, price=$20.25.
+
+Tax = 20%, universal discount = 15%, UPC-discount = 7% for UPC=12345
+
+Tax amount = $20.25 * 20% = $4.05, discount = $20.25 * 15% = $3.04, UPC discount = $1.42
+
+Program prints price $19.84
+
+Program reports total discount amount $4.46
+
+
+Tax = 21%, universal discount = 15%, UPC-discount = 7 for UPC = 789
+
+Tax amount = $20.25 * 21% = $4.25, discount = $20.25 * 15% = $3.04
+
+Program prints price $21.46
+
+Program reports discount amount $3.04
+
 
 (more to come)
 
