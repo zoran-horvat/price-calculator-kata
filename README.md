@@ -153,7 +153,7 @@ Transport = $2.2
 TOTAL = $22.65  
 Program separately reports $4.24 total discount
 
-**7.	CAP**
+**7.	CAP**  
 Customer is not satisfied with total discounted amount and wants to put a cap on it.  
 Cap is either a percentage of original price or an absolute amount. Either way, the discounted amount must not be larger than indicated by the cap.
 
