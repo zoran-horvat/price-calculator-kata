@@ -28,13 +28,15 @@ There is a flat-rate tax (currently 20%) added to all products’ prices. Tax is
 
 Customer wants to be able to specify tax percentage.
 
-Write code which displays base price and price with tax for a product. Sample product: Title = “The Little Prince”, UPC=12345, price=$20.25.
+Write code which displays base price and price with tax for a product.
 
 **Definition of done:**
 
-“The Little Prince” price reported as $20.25 before tax and $24.30 after 20% tax.
+Sample product: Book with title = “The Little Prince”, UPC=12345, price=$20.25.
 
-“The Little Prince” price reported as $20.25 before tax and $24.50 after 21% tax.
+Product price reported as $20.25 before tax and $24.30 after 20% tax.
+
+Product price reported as $20.25 before tax and $24.50 after 21% tax.
 
 **2. DISCOUNT**
 
@@ -47,6 +49,8 @@ Customer requires discount percentage to be configurable.
 Enhance code so that it can apply discount and tax to the product’s price.
 
 **Definition of done:**
+
+Sample product: Book with title = “The Little Prince”, UPC=12345, price=$20.25.
 
 Tax=20%, discount=15%
 
