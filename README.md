@@ -3,7 +3,9 @@
 ## Invitation
 You are invited to implement imaginary customer’s requirements listed below, using programming language of choice and applying any coding practices you wish.
 
-I have been using this example since 2016 in trainings and lectures. Many developers have already passed through the drill of implementing these same requirements.
+I have been using this example since 2016 in trainings and lectures. Many developers have already passed through the drill of implementing these same requirements. Requirements listed below have been selected carefully after observing typical mistakes made by novice developers, but very often by seasoned ones, too.
+
+Take your time to examine the requirements and select your development strategy. Play with the code as long as you feel excitement. There is no reward after completing this challennge.
 
 ## Rules of Conduct
 **1. You are free to choose programming language and programming method** - This challenge is not a competition. There are no better or worse solutions per se. The goal is to evaluate expressiveness of languages and usefulness of programming paradigms. All languages and paradigms are equally welcome.
