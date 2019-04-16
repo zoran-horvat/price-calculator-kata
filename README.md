@@ -18,92 +18,59 @@ I have been using this example since 2016 in trainings and lectures. Many develo
 
 ## Customer’s Requirements
 
-**1. TAX**
-
-There is a product, defined by: Name (string), UPC (can be a plain number) and a price.
-
-Company is only doing business in US dollars. Money is calculated at two decimals precision (e.g. $12.34).
-
-There is a flat-rate tax (currently 20%) added to all products’ prices. Tax is mandatory and equal for all products.
-
-Customer wants to be able to specify tax percentage.
-
+**1. TAX**  
+There is a product, defined by: Name (string), UPC (can be a plain number) and a price.  
+Company is only doing business in US dollars. Money is calculated at two decimals precision (e.g. $12.34).  
+There is a flat-rate tax (currently 20%) added to all products’ prices. Tax is mandatory and equal for all products.  
+Customer wants to be able to specify tax percentage.  
 Write code which displays base price and price with tax for a product.
 
-**Definition of done:**
-
+**Definition of done:**  
 Sample product: Book with name = “The Little Prince”, UPC=12345, price=$20.25.
 
-Product price reported as $20.25 before tax and $24.30 after 20% tax.
-
+Product price reported as $20.25 before tax and $24.30 after 20% tax.  
 Product price reported as $20.25 before tax and $24.50 after 21% tax.
 
-
-**2. DISCOUNT**
-
-Customer chooses to apply a relative discount to all products.
-
-Discount is specified as a percentage relative to price. Tax is always applied to a price before it was deduced, i.e. discount doesn’t reduce tax amount (see example below).
-
-Customer requires discount percentage to be configurable.
-
+**2. DISCOUNT**  
+Customer chooses to apply a relative discount to all products.  
+Discount is specified as a percentage relative to price. Tax is always applied to a price before it was deduced, i.e. discount doesn’t reduce tax amount (see example below).  
+Customer requires discount percentage to be configurable.  
 Enhance code so that it can apply discount and tax to the product’s price.
 
-**Definition of done:**
-
+**Definition of done:**  
 Sample product: Book with name = “The Little Prince”, UPC=12345, price=$20.25.
 
-Tax=20%, discount=15%
-
-Tax amount = $4.05; Discount amount = $3.04
-
+Tax=20%, discount=15%  
+Tax amount = $4.05; Discount amount = $3.04  
 Price before = $20.25, price after = $21.26
 
-
-**3. REPORT-DISCOUNT**
-
+**3. REPORT-DISCOUNT**  
 When a discount is applied, print out (or display by any convenient means) a message which reports the discounted amount.
 
-**Definition of done:**
-
+**Definition of done:**  
 Sample product: Title = “The Little Prince”, UPC=12345, price=$20.25.
 
-Tax = 20%, discount = 15% - Program displays $3.04 amount which was deduced
-
+Tax = 20%, discount = 15% - Program displays $3.04 amount which was deduced  
 Tax = 20%, no discount - Program doesn't display any deduced amount
 
-
-**4. UPC-DISCOUNT**
-
-There is a special discount assigned to a product with specified (configurable) UPC.
-
-This discount only applies to a product with UPC value equal to the value defined by the discount.
-
-If both universal and UPC-based discounts are applicable, they both apply to original product price and then sum up.
-
+**4. UPC-DISCOUNT**  
+There is a special discount assigned to a product with specified (configurable) UPC.  
+This discount only applies to a product with UPC value equal to the value defined by the discount.  
+If both universal and UPC-based discounts are applicable, they both apply to original product price and then sum up.  
 When two discounts are applied, only the total discounted amount is printed (requirement REPORT-DISCOUNT).
 
-**Definition of done:**
-
+**Definition of done:**  
 Sample product: Title = “The Little Prince”, UPC=12345, price=$20.25.
 
-Tax = 20%, universal discount = 15%, UPC-discount = 7% for UPC=12345
-
-Tax amount = $20.25 * 20% = $4.05, discount = $20.25 * 15% = $3.04, UPC discount = $1.42
-
-Program prints price $19.84
-
+Tax = 20%, universal discount = 15%, UPC-discount = 7% for UPC=12345  
+Tax amount = $20.25 * 20% = $4.05, discount = $20.25 * 15% = $3.04, UPC discount = $1.42  
+Program prints price $19.84  
 Program reports total discount amount $4.46
 
-
-Tax = 21%, universal discount = 15%, UPC-discount = 7 for UPC = 789
-
-Tax amount = $20.25 * 21% = $4.25, discount = $20.25 * 15% = $3.04
-
-Program prints price $21.46
-
+Tax = 21%, universal discount = 15%, UPC-discount = 7 for UPC = 789  
+Tax amount = $20.25 * 21% = $4.25, discount = $20.25 * 15% = $3.04  
+Program prints price $21.46  
 Program reports discount amount $3.04
-
 
 (more to come)
 
