@@ -107,7 +107,7 @@ Tax = $4.25
 TOTAL = $24.5  
 Program reports no discounts
 
-6.	COMBINED-DISCOUNTS  
+**6. COMBINED-DISCOUNTS**  
 Customer is not satisfied with the way in which discounts are combined (simple sum).  
 New request is to allow the customer to select between two methods of combining discounts: (1) additive - discounts are all calculated from the original price and summed up, or (2) multiplicative - each discount is calculated from the price after applying the previous one.
 
