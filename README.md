@@ -44,7 +44,7 @@ Tax=20%, discount=15%
 Tax amount = $4.05; Discount amount = $3.04  
 Price before = $20.25, price after = $21.26
 
-**3. REPORT-DISCOUNT**  
+**3. REPORT**  
 When a discount is applied, print out (or display by any convenient means) a message which reports the discounted amount.
 
 **Definition of done:**  
@@ -60,7 +60,7 @@ Tax = 20%, no discount
 Program prints price $24.30  
 Program doesn’t show any discounted amount.
 
-**4. UPC-DISCOUNT**  
+**4. SELECTIVE**  
 There is a special discount assigned to a product with specified (configurable) UPC.  
 This discount only applies to a product with UPC value equal to the value defined by the discount.  
 If both universal and UPC-based discounts are applicable, they both apply to original product price and then sum up.  
@@ -114,7 +114,7 @@ Tax = $4.25
 TOTAL = $24.5  
 Program reports no discounts
 
-**6. COMBINED-DISCOUNTS**  
+**6. COMBINING**  
 Customer is not satisfied with the way in which discounts are combined (simple sum).  
 New request is to allow the customer to select between two methods of combining discounts: (1) additive - discounts are all calculated from the original price and summed up, or (2) multiplicative - each discount is calculated from the price after applying the previous one.
 
