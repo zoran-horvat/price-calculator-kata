@@ -50,8 +50,15 @@ When a discount is applied, print out (or display by any convenient means) a mes
 **Definition of done:**  
 Sample product: Title = “The Little Prince”, UPC=12345, price=$20.25.
 
-Tax = 20%, discount = 15% - Program displays $3.04 amount which was deduced  
-Tax = 20%, no discount - Program doesn't display any deduced amount
+Case #1:  
+Tax = 20%, discount = 15%  
+Program prints price $21.26  
+Program displays $3.04 amount which was deduced
+
+Case #2:  
+Tax = 20%, no discount  
+Program prints price $24.30  
+Program doesn’t show any discounted amount.
 
 **4. UPC-DISCOUNT**  
 There is a special discount assigned to a product with specified (configurable) UPC.  
