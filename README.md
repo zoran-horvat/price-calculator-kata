@@ -62,11 +62,13 @@ When two discounts are applied, only the total discounted amount is printed (req
 **Definition of done:**  
 Sample product: Title = “The Little Prince”, UPC=12345, price=$20.25.
 
+Case #1:  
 Tax = 20%, universal discount = 15%, UPC-discount = 7% for UPC=12345  
 Tax amount = $20.25 * 20% = $4.05, discount = $20.25 * 15% = $3.04, UPC discount = $1.42  
 Program prints price $19.84  
 Program reports total discount amount $4.46
 
+Case #2:  
 Tax = 21%, universal discount = 15%, UPC-discount = 7 for UPC = 789  
 Tax amount = $20.25 * 21% = $4.25, discount = $20.25 * 15% = $3.04  
 Program prints price $21.46  
@@ -80,6 +82,7 @@ Program should separately report product price, tax, discounts, each cost and to
 Definition of done:  
 Sample product: Title = “The Little Prince”, UPC=12345, price=$20.25.
 
+Case #1:  
 Tax = 21%, discount = 15%, UPC discount = 7% for UPC=12345  
 Packaging cost = 1% of price  
 Transport cost = $2.2  
@@ -95,6 +98,7 @@ Transport = $2.2
 TOTAL = $22.44  
 Program separately reports $4.46 total discount
 
+Case #2:  
 Tax 21%, no discounts and no additional costs.
 
 Program prints:  
