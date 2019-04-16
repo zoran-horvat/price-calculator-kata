@@ -12,7 +12,7 @@ Take your time to examine the requirements and select your development strategy.
 
 **2. Requirements should be implemented in order** - The sequence of requirements is simulating the evolution of customer's expectations over a prolonged period of time, as customer occasionally gets “bright ideas” and hands them over to developers. Implementing requirements all at once or out of order would look like real time was flowing back and forth.
 
-**3. Application must be operative at all times** - After implementing each requirement, the application must be correct and fully operational. The newly implemented requirement, as well as all previous requirements must work. If, however, there are bugs or omissions, don’t despair – just apply a fix when you find them and carry on. That is what you would do in a day-to-day development anyway.
+**3. Application must remain operational at all times** - After implementing each requirement, the application must be correct and fully operational. The newly implemented requirement, as well as all previous requirements must work. If, however, there are bugs or omissions, don’t despair – just apply a fix when you find them and carry on. That is what you would do in a day-to-day development anyway.
 
 **4. Mark each task with the requirement label** - Include requirement label into each commit message, so that the evolution of the product can be observed later. Each requirement begins with a label in capital letters.
 
