@@ -72,5 +72,37 @@ Tax amount = $20.25 * 21% = $4.25, discount = $20.25 * 15% = $3.04
 Program prints price $21.46  
 Program reports discount amount $3.04
 
+**5. EXPENSES**  
+Customer wants to introduce packaging and transport costs, administrative costs, etc., which are neither subject to tax, nor to discounts.  
+There can be more than one cost added, each defined by a description and an amount. Amount can either be a percentage of price or an absolute value.  
+Program should separately report product price, tax, discounts, each cost and total.
+
+Definition of done:  
+Sample product: Title = “The Little Prince”, UPC=12345, price=$20.25.
+
+Tax = 21%, discount = 15%, UPC discount = 7% for UPC=12345  
+Packaging cost = 1% of price  
+Transport cost = $2.2  
+Tax amount = $20.25 * 21% = $4.25, discounts = $20.25 * 15% + $20.25 * 7% = $3.04 + $1.42 = $4.46  
+Packaging = $20.25 * 1% = $0.20, transport = $2.2
+
+Program prints:  
+Cost = $20.25  
+Tax = $4.25  
+Discounts = $4.46  
+Packaging = $0.20   
+Transport = $2.2  
+TOTAL = $22.44  
+Program separately reports $4.46 total discount
+
+Tax 21%, no discounts and no additional costs.
+
+Program prints:  
+Cost = $20.25  
+Tax = $4.25  
+TOTAL = $24.5  
+Program reports no discounts
+
+
 (more to come)
 
