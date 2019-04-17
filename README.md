@@ -261,6 +261,6 @@ Transport = 0.61 USD
 TOTAL = 20.81 USD
 Program separately reports discount 4.24 USD
 
-**10.	CONFIGURATOR (bonus level)**  
+**11.	CONFIGURATOR (bonus level)**  
 Customer wants to be able to configure all elements of the price calculator: tax, discounts, combination method, cap, expenses.  
 You are free to choose the configuration method – plain text file, XML file, JSON file, database, etc.
