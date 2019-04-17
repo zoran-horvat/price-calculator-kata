@@ -88,7 +88,7 @@ By this point, tax had precedence over any discounts. That means that tax was al
 Customer is happy to announce that some discounts can legally be applied before tax. That has the consequence that the tax amount would be lower.  
 Extend the solution so that discounts can either be applied before tax calculation, or after tax calculation.
 
-Definition of done:  
+*Definition of done:*  
 Sample product: Title = “The Little Prince”, UPC=12345, price=$20.25.  
 Tax = 20%, universal discount (after tax) = 15%, UPC-discount (before tax) = 7% for UPC=12345
 
@@ -237,6 +237,28 @@ Cost = 17.76 GBP
 Tax = 3.55 GBP  
 TOTAL = 21.31 GBP  
 Program reports no discount
+
+**10. PRECISION**  
+New request comes from the accounting department. All money-related calculations must be performed with four decimal digits precision and then rounded to two decimal digits before becoming final.  
+This means, for example, that all discounts, taxes and expenses must be calculated and combined with higher precision and then each final line rounded to lower precision (see example below).
+
+*Definition of done:*  
+Sample product: Title = “The Little Prince”, UPC=12345, price=20.25 USD.  
+Tax = 21%, universal discount = 15%, UPC discount = 7% for UPC=12345, discounts are multiplicative and after tax  
+Transport cost = 3% of base price
+
+Tax amount = 20.25 USD * 21% = 4.2525 USD  
+Universal discount = 20.25 USD * 15% = 3.0375 USD  
+UPC discount = (20.25 USD – 3.0375 USD) * 7% = 1.2049 USD  
+Total discount = 3.0375 USD + 1.2049 USD = 4.2424 USD  
+Transport cost = 20.25 USD * 3% = 0.6075 USD
+
+Program prints:  
+Cost = 20.25 USD  
+Tax = 4.25 USD  
+Discounts = 4.24 USD  
+Transport = 0.61 USD  
+TOTAL = 20.81 USD
 
 **10.	CONFIGURATOR (bonus level)**  
 Customer wants to be able to configure all elements of the price calculator: tax, discounts, combination method, cap, expenses.  
