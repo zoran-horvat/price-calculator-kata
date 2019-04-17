@@ -83,7 +83,23 @@ Tax amount = $20.25 * 21% = $4.25, discount = $20.25 * 15% = $3.04
 Program prints price $21.46  
 Program reports discount amount $3.04
 
-**5. EXPENSES**  
+**5. PRECEDENCE**  
+By this point, tax had precedence over any discounts. That means that tax was always applied to full price of the product, not to the discounted price.  
+Customer is happy to announce that some discounts can legally be applied before tax. That has the consequence that the tax amount would be lower.  
+Extend the solution so that discounts can either be applied before tax calculation, or after tax calculation.
+
+Definition of done:  
+Sample product: Title = “The Little Prince”, UPC=12345, price=$20.25.  
+Tax = 20%, universal discount (after tax) = 15%, UPC-discount (before tax) = 7% for UPC=12345
+
+UPC discount amount = $1.42, remaining price = $20.25 - $1.42 = $18.83  
+Tax amount = $18.83 * 20% = $3.77, universal discount = $18.83 * 15% = $2.82  
+Final price = $20.25 - $1.42 + $3.77 - $2.82 = $19.78
+
+Program prints price $19.78  
+Program reports total discount amount $4.24
+
+**6. EXPENSES**  
 Customer wants to introduce packaging and transport costs, administrative costs, etc., which are neither subject to tax, nor to discounts.  
 There can be more than one cost added, each defined by a description and an amount. Amount can either be a percentage of price or an absolute value.  
 Program should separately report product price, tax, discounts, each cost and total.
@@ -116,7 +132,7 @@ Tax = $4.25
 TOTAL = $24.5  
 Program reports no discounts
 
-**6. COMBINING**  
+**7. COMBINING**  
 Customer is not satisfied with the way in which discounts are combined (simple sum).  
 New request is to allow the customer to select between two methods of combining discounts: (1) additive - discounts are all calculated from the original price and summed up, or (2) multiplicative - each discount is calculated from the price after applying the previous one.
 
@@ -155,7 +171,7 @@ Transport = $2.2
 TOTAL = $22.65  
 Program separately reports $4.24 total discount
 
-**7.	CAP**  
+**8.	CAP**  
 Customer is not satisfied with total discounted amount and wants to put a cap on it.  
 Cap is either a percentage of original price or an absolute amount. Either way, the discounted amount must not be larger than indicated by the cap.
 
@@ -195,7 +211,7 @@ Discounts = $4.46
 TOTAL = $20.04  
 Program separately reports $4.46 total discount
 
-**8. CURRENCY**  
+**9. CURRENCY**  
 Customer is happy to announce expansion to other markets.  
 New request is to support currencies other than US dollar.  
 Currencies should be indicated using ISO-3 codes (e.g. USD, GBP, JPY, etc.).
@@ -222,6 +238,6 @@ Tax = 3.55 GBP
 TOTAL = 21.31 GBP  
 Program reports no discount
 
-**9.	CONFIGURATOR (bonus level)**  
+**10.	CONFIGURATOR (bonus level)**  
 Customer wants to be able to configure all elements of the price calculator: tax, discounts, combination method, cap, expenses.  
 You are free to choose the configuration method – plain text file, XML file, JSON file, database, etc.
