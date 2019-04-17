@@ -259,6 +259,7 @@ Tax = 4.25 USD
 Discounts = 4.24 USD  
 Transport = 0.61 USD  
 TOTAL = 20.81 USD
+Program separately reports discount 4.24 USD
 
 **10.	CONFIGURATOR (bonus level)**  
 Customer wants to be able to configure all elements of the price calculator: tax, discounts, combination method, cap, expenses.  
