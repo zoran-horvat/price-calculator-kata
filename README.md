@@ -7,6 +7,8 @@ I have been using this example since 2016 in trainings and lectures. Many develo
 
 Take your time to examine the requirements and select your development strategy. Play with the code as long as you feel excitement. There is no reward after completing this challennge.
 
+*If you decide to participate, you may fork this repo and develop your own solution based on the requirements. Don't be afraid to experiment and exchange thoughts with other developers.*
+
 ## Rules of Conduct
 **1. You are free to choose programming language and programming method** - This challenge is not a competition. There are no better or worse solutions per se. The goal is to evaluate expressiveness of languages and usefulness of programming paradigms. All languages and paradigms are equally welcome.
 
