@@ -47,5 +47,19 @@ namespace price_calculator_kata_Tests
             //assert 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestCase(21.26,20,15)]
+        public void ApplyDiscount_CreateProduct_ReturnPriceAfterDiscount(decimal expected, decimal percentageTax, decimal percentageDiscount)
+        {
+            // arrage
+            var product = new Product("The Little Prince", "12345", new Money(20.25m, "$"));
+
+            //act
+            Money price = product.ApplyDicount(percentageTax, percentageDiscount);
+            decimal actual = price.Amount;
+
+            //assert 
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

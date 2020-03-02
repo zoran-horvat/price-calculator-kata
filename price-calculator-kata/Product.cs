@@ -27,8 +27,20 @@ namespace price_calculator_kata
 
         public Money ApplyTax(decimal percentage)
         {
-            var taxAmount = Math.Round((Price.Amount * percentage) / 100,2);
+            var taxAmount = GetTaxAmount(percentage);
             return new Money(Price.Amount + taxAmount, Price.Currency);
+        }
+
+        private decimal GetTaxAmount(decimal percentage)
+        {
+            return Math.Round((Price.Amount * percentage) / 100, 2);
+        }
+
+        public Money ApplyDicount(decimal percentageTax, decimal percentageDiscount)
+        {
+            var taxAmount = GetTaxAmount(percentageTax);
+            var disCountAmount = GetTaxAmount(percentageDiscount);
+            return new Money((Price.Amount + taxAmount) - disCountAmount, Price.Currency);
         }
     }
 }
