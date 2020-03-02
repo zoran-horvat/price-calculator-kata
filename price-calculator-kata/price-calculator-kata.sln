@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "price-calculator-kata", "price-calculator-kata.csproj", "{44C56802-EFBB-4C4A-9856-9ECE92849A82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "price-calculator-kata-Tests", "..\price-calculator-kata-Tests\price-calculator-kata-Tests.csproj", "{B33C1641-5DE6-45DE-9EFB-E604F5D93AD4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44C56802-EFBB-4C4A-9856-9ECE92849A82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44C56802-EFBB-4C4A-9856-9ECE92849A82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44C56802-EFBB-4C4A-9856-9ECE92849A82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44C56802-EFBB-4C4A-9856-9ECE92849A82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B33C1641-5DE6-45DE-9EFB-E604F5D93AD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B33C1641-5DE6-45DE-9EFB-E604F5D93AD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B33C1641-5DE6-45DE-9EFB-E604F5D93AD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B33C1641-5DE6-45DE-9EFB-E604F5D93AD4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A5A68AE1-30A9-4684-BED7-45C536672246}
+	EndGlobalSection
+EndGlobal
