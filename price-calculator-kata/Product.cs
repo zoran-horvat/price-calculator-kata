@@ -11,6 +11,8 @@ namespace price_calculator_kata
         public string UPC { get; private set; }
 
         public Money Price { get; private set; }
+        public Money Tax { get; private set; }
+        public Money Discount { get; private set; }
 
         public Product(string name, string uPC, Money price)
         {
@@ -23,11 +25,16 @@ namespace price_calculator_kata
             Name = name;
             UPC = uPC;
             Price = price;
+            Tax = new Money(0, price.Currency);
+            Discount = new Money(0, price.Currency);
         }
 
         public Money ApplyTax(decimal percentage)
         {
+            if (percentage < 0 || percentage > 100)
+                throw new ArgumentException();
             var taxAmount = GetTaxAmount(percentage);
+            Tax = new Money(taxAmount, Price.Currency);
             return new Money(Price.Amount + taxAmount, Price.Currency);
         }
 
@@ -38,9 +45,16 @@ namespace price_calculator_kata
 
         public Money ApplyDicount(decimal percentageTax, decimal percentageDiscount)
         {
+            if (percentageTax < 0 || percentageTax > 100)
+                throw new ArgumentException("percentageTax not valid");
+            if (percentageDiscount < 0 || percentageTax > 100)
+                throw new ArgumentException("percentageDiscount not valid");
             var taxAmount = GetTaxAmount(percentageTax);
             var disCountAmount = GetTaxAmount(percentageDiscount);
+
+            Discount = new Money(disCountAmount,Price.Currency);
             return new Money((Price.Amount + taxAmount) - disCountAmount, Price.Currency);
         }
+
     }
 }

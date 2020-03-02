@@ -61,5 +61,47 @@ namespace price_calculator_kata_Tests
             //assert 
             Assert.AreEqual(expected, actual);
         }
+        [Test]
+        public void ApplyTax_PercentageNotValid_ThrowsException()
+        {
+            // arrage
+            var product = new Product("The Little Prince", "12345", new Money(20.25m, "$"));
+
+            //act
+
+            //assert 
+            Assert.Throws<ArgumentException>(()=> product.ApplyTax(-1m));
+        }
+        [Test]
+        public void ApplyDiscount_PercentageNotValid_ThrowsException()
+        {
+            // arrage
+            var product = new Product("The Little Prince", "12345", new Money(20.25m, "$"));
+
+            //act
+
+            //assert 
+           var ex1 = Assert.Throws<ArgumentException>(() => product.ApplyDicount(20,-1));
+           var ex2 = Assert.Throws<ArgumentException>(() => product.ApplyDicount(-1,10));
+
+            Assert.That(ex1.Message, Is.EqualTo("percentageDiscount not valid"));
+            Assert.That(ex2.Message, Is.EqualTo("percentageTax not valid"));
+        }
+
+        [TestCase(21.26, 20, 15, 3.04)]
+        [TestCase(24.30, 20, 0, 0)]
+        public void PrintDiscount_CreateProduct_ReturnPriceAfterDiscount(decimal expected,
+            decimal percentageTax, decimal percentageDiscount, decimal expectedDiscount)
+        {
+            // arrage
+            var product = new Product("The Little Prince", "12345", new Money(20.25m, "$"));
+            //act
+            var price = product.ApplyDicount(percentageTax, percentageDiscount);
+            var actual = price.Amount;
+            var actualDiscount = product.Discount.Amount;
+            //assert 
+            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expectedDiscount, actualDiscount);
+        }
     }
 }
