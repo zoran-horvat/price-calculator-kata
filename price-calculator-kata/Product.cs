@@ -56,8 +56,7 @@ namespace price_calculator_kata
             return new Money((Price.Amount + taxAmount) - disCountAmount, Price.Currency);
         }
 
-        public Money ApplySpecialDiscount(decimal percentageTax, decimal percentageDiscount,
-            decimal percentageDiscountUPCdiscount, string uPC)
+        public Money ApplySpecialDiscount(decimal percentageTax, decimal percentageDiscount, decimal percentageDiscountUPCdiscount, string uPC)
         {
             if (percentageTax < 0 || percentageTax > 100)
                 throw new ArgumentException("percentageTax not valid");
@@ -69,12 +68,35 @@ namespace price_calculator_kata
             var taxAmount = GetPercentageAmount(percentageTax);
             var discountAmount = GetPercentageAmount(percentageDiscount);
             decimal discountUPCAmount = discountAmount;
-            
+
             if (uPC.Equals(UPC))
                 discountUPCAmount += GetPercentageAmount(percentageDiscountUPCdiscount);
 
             Discount = new Money(discountUPCAmount, Price.Currency);
             return new Money((Price.Amount + taxAmount) - discountUPCAmount, Price.Currency);
         }
+
+
+        public Money ApplyPrecedenceDiscount(decimal percentageTax, decimal percentageDiscount,
+            decimal percentageDiscountUPCdiscount, string uPC)
+        {
+            if (percentageTax < 0 || percentageTax > 100)
+                throw new ArgumentException("percentageTax not valid");
+            if (percentageDiscount < 0 || percentageTax > 100)
+                throw new ArgumentException("percentageDiscount not valid");
+            if (percentageDiscountUPCdiscount < 0 || percentageDiscountUPCdiscount > 100)
+                throw new ArgumentException("percentageDiscountUPCdiscount not valid");
+            
+            decimal discountUPCAmount = 0;
+            if (uPC.Equals(UPC))
+                discountUPCAmount += GetPercentageAmount(percentageDiscountUPCdiscount);
+            Price.Amount -= discountUPCAmount;
+            var taxAmount = GetPercentageAmount(percentageTax);
+            var discountAmount = GetPercentageAmount(percentageDiscount);
+
+            Discount = new Money(discountAmount + discountUPCAmount, Price.Currency);
+            return new Money((Price.Amount + taxAmount) - discountAmount, Price.Currency);
+        }
+
     }
 }

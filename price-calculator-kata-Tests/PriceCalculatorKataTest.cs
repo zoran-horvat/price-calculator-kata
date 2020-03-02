@@ -106,7 +106,7 @@ namespace price_calculator_kata_Tests
 
         [TestCase(20, 15, 7, "12345", 4.46, 19.84)]
         [TestCase(21, 15, 7, "789", 3.04, 21.46)]
-        public void PrintDiscount_CreateProduct_ReturnPriceAfterDiscount(
+        public void SpecialDiscount_CreateProduct_ReturnPriceAfterDiscount(
             decimal percentageTax, decimal percentageDiscount,
             decimal percentageDiscountUPCdiscount, string uPC, decimal expectedDiscount,
             decimal expectedPrice)
@@ -115,6 +115,25 @@ namespace price_calculator_kata_Tests
             var product = new Product("The Little Prince", "12345", new Money(20.25m, "$"));
             //act
             var price = product.ApplySpecialDiscount(percentageTax, percentageDiscount,
+                percentageDiscountUPCdiscount, uPC);
+            var actual = price.Amount;
+            var actualDiscount = product.Discount.Amount;
+            //assert 
+            Assert.AreEqual(expectedPrice, actual);
+            Assert.AreEqual(expectedDiscount, actualDiscount);
+        }
+
+        //Precedence
+        [TestCase(20, 15, 7, "12345", 4.24, 19.78)]
+        public void PrecedenceDiscount_CreateProduct_ReturnPriceAfterDiscount(
+            decimal percentageTax, decimal percentageDiscount,
+            decimal percentageDiscountUPCdiscount, string uPC, decimal expectedDiscount,
+            decimal expectedPrice)
+        {
+            // arrage
+            var product = new Product("The Little Prince", "12345", new Money(20.25m, "$"));
+            //act
+            var price = product.ApplyPrecedenceDiscount(percentageTax, percentageDiscount,
                 percentageDiscountUPCdiscount, uPC);
             var actual = price.Amount;
             var actualDiscount = product.Discount.Amount;
